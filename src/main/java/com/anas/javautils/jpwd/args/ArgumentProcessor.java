@@ -27,7 +27,7 @@ public class ArgumentProcessor {
     }
 
 
-    public void process(String[] args) {
+    public void process(final String[] args) {
         try {
             commandLine = new DefaultParser(true)
                     .parse(options, args, true);
@@ -53,11 +53,11 @@ public class ArgumentProcessor {
     }
 
 
-    public boolean hasOption(CLIOption option) {
+    public boolean hasOption(final CLIOption option) {
         return commandLine.hasOption(option.getOption().getOpt());
     }
 
-    public String getOptionValue(CLIOption option) {
+    public String getOptionValue( final CLIOption option) {
         return commandLine.getOptionValue(option.getOption().getOpt());
     }
 }
