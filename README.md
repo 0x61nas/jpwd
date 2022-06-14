@@ -1,5 +1,12 @@
 ## jpwd: A modern alternative to GNU/pwd using Java 🥰☕
 
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)
+
 ![jpwd screenshot](./screenshots/0.0.1.png "jpwd")
 
 - Requires jdk 17+ and [nerd-fonts](https://www.nerdfonts.com)
@@ -41,18 +48,18 @@
 
 ### Available in 
 
-[//]: # ([![GitHub]&#40;https://img.shields.io/badge/GitHub-Main%20repo-brightgreen?style=for-the-badge&logo=GitHub&#41;]&#40;https://github.com/Anas-Elgarhy/jls&#41;)
+[![GitHub](https://img.shields.io/badge/GitHub-Main%20repo-brightgreen?style=for-the-badge&logo=GitHub)](https://github.com/Anas-Elgarhy/jls)
 
-[//]: # ([![GitLab]&#40;https://img.shields.io/badge/GitLab-Mirror%20repo-brightgreen?style=for-the-badge&logo=GitLab&#41;]&#40;https://gitlab.com/java-utils1/jls&#41;)
+[![GitLab](https://img.shields.io/badge/GitLab-Mirror%20repo-brightgreen?style=for-the-badge&logo=GitLab)](https://gitlab.com/java-utils1/jls)
 
-[//]: # ([![BitBucket]&#40;https://img.shields.io/badge/BitBucket-Mirror%20repo-brightgreen?style=for-the-badge&logo=BitBucket&#41;]&#40;https://bitbucket.org/anas_elgarhy/jls&#41;)
+[![BitBucket](https://img.shields.io/badge/BitBucket-Mirror%20repo-brightgreen?style=for-the-badge&logo=BitBucket)](https://bitbucket.org/anas_elgarhy/jls)
 
-[//]: # ([![Codeberg]&#40;https://img.shields.io/badge/Codeberg-Mirror%20repo-brightgreen?style=for-the-badge&logo=Codeberg&#41;]&#40;https://codeberg.org/java-utils/jls&#41;)
+[![Codeberg](https://img.shields.io/badge/Codeberg-Mirror%20repo-brightgreen?style=for-the-badge&logo=Codeberg)](https://codeberg.org/java-utils/jls)
 
-[//]: # ()
-[//]: # ([![Quality gate]&#40;https://sonarcloud.io/api/project_badges/quality_gate?project=Anas-Elgarhy_jls&#41;]&#40;https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jls&#41;)
 
-[//]: # ()
-[//]: # ([![SonarCloud]&#40;https://sonarcloud.io/images/project_badges/sonarcloud-black.svg&#41;]&#40;https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jls&#41;)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Anas-Elgarhy_jls)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jls)
+
+
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)
 
 ![License: GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue.svg)
