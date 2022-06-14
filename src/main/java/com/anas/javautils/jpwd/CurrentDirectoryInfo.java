@@ -96,6 +96,14 @@ public class CurrentDirectoryInfo {
     public String toString() {
         final var sb = new StringBuilder();
         final var hasCustomSeparator = ArgumentProcessor.getInstance().hasOption(CLIOption.SEPARATOR);
+
+        if (!ArgumentProcessor.getInstance().hasOption(CLIOption.NO_ICONS)) {
+            try {
+                sb.append(Icon.getCorrectIcon(Path.of(".").toRealPath().toFile()))
+                        .append(" ");
+            } catch (IOException ignored) { }
+        }
+
         for (final var dir : dirs) {
             sb.append(dir.toString());
             if (!dir.getNormalString().equals("/") || hasCustomSeparator)
