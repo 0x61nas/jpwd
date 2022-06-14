@@ -13,8 +13,8 @@ public enum CLIOption {
     SEPARATOR_COLOR("sc", "separator-color", true, """
             Set the separator color"""),
     NO_COLORS("nc", "no-colors", false, "Disable colors"),
-    ALIGNMENT("a", "alignment", true, """ 
-            Set the output alignment (left, right, center), default is left"""),
+    /*ALIGNMENT("a", "alignment", true, """
+            Set the output alignment (left, right, center), default is left"""),*/
     BACKGROUND("b", "background", true, """
             Set the background color default is none"""),
     NO_ICONS("ni", "no-icons", false, "Disable icons"),
