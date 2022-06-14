@@ -5,16 +5,43 @@ import com.anas.javautils.jpwd.args.CLIOption;
 import com.anas.javautils.jpwd.lanterna.TextColor;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class CurrentDirectoryInfo {
     private final ColoredString separator;
     private ColoredString[] dirs;
+    private String[] colors;
+    private ArrayList<TextColor> blockedColors;
 
     public CurrentDirectoryInfo() {
-        separator = new ColoredString(File.separator);
+        final var args = ArgumentProcessor.getInstance();
+        separator = setupSeparator();
+        if (args.hasOption(CLIOption.COLORS_LIST)) {
+            colors = args.getOptionValue(CLIOption.COLORS_LIST).split(",");
+        }
+        if (args.hasOption(CLIOption.BLOCK_COLORS)) {
+            blockedColors = new ArrayList<>();
+            setupBlockedColors();
+        }
         setupDirs();
-        if (!ArgumentProcessor.getInstance().hasOption(CLIOption.NO_COLORS))
+        if (!args.hasOption(CLIOption.NO_COLORS))
             setupColors();
+    }
+
+    private void setupBlockedColors() {
+        String[] blockedColorsStr = ArgumentProcessor.getInstance().getOptionValue(CLIOption.BLOCK_COLORS).split(",");
+        for (String blockedColorStr : blockedColorsStr) {
+            blockedColors.add(TextColor.Factory.fromString(blockedColorStr));
+        }
+    }
+
+    private ColoredString setupSeparator() {
+        if (ArgumentProcessor.getInstance().hasOption(CLIOption.SEPARATOR))
+            return new ColoredString(ArgumentProcessor
+                    .getInstance()
+                    .getOptionValue(CLIOption.SEPARATOR));
+
+        return new ColoredString(File.separator);
     }
 
     private void setupColors() {
@@ -36,16 +63,29 @@ public class CurrentDirectoryInfo {
         }
     }
 
-    private TextColor.RGB generateRandomColor() {
-        return new TextColor.RGB((int) (Math.random() * 255),
-                (int) (Math.random() * 255),
-                (int) (Math.random() * 255));
+    private TextColor generateRandomColor() {
+        if (colors != null) {
+            final var random = (int) (Math.random() * colors.length);
+            return TextColor.Factory.fromString(colors[random]);
+        }
+        TextColor color;
+        do {
+            color = new TextColor.RGB((int) (Math.random() * 255),
+                    (int) (Math.random() * 255),
+                    (int) (Math.random() * 255));
+        } while (blockedColors != null && blockedColors.contains(color));
+        return color;
     }
 
     private void setupDirs() {
-        final var parentDirs = new File("").getAbsolutePath().split(separator.getNormalString());
+        final var parentDirs = new File("").getAbsolutePath().split(File.separator);
         dirs = new ColoredString[parentDirs.length];
-        for (int i = 0; i < parentDirs.length; i++) {
+        int i = 0;
+        if (parentDirs[0].isBlank()) { // Means is the root directory
+            dirs[0] = new ColoredString("/");
+            i++;
+        }
+        for (; i < parentDirs.length; i++) {
             dirs[i] = new ColoredString(parentDirs[i]);
         }
     }
@@ -53,9 +93,11 @@ public class CurrentDirectoryInfo {
     @Override
     public String toString() {
         final var sb = new StringBuilder();
+        final var hasCustomSeparator = ArgumentProcessor.getInstance().hasOption(CLIOption.SEPARATOR);
         for (final var dir : dirs) {
             sb.append(dir.toString());
-            sb.append(separator.toString());
+            if (!dir.getNormalString().equals("/") || hasCustomSeparator)
+                sb.append(separator.toString());
         }
         sb.delete(sb.length() - separator.toString().length(), sb.length()); // Remove last separator
         return sb.toString();

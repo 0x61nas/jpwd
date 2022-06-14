@@ -6,18 +6,18 @@ import java.nio.charset.StandardCharsets;
 
 public class ColoredString {
     private final byte[] strBytes;
-    private TextColor.RGB foregroundColor;
+    private TextColor textColor;
     public ColoredString(String str) {
         strBytes = str.getBytes(StandardCharsets.UTF_8);
-        foregroundColor = null;
+        textColor = null;
     }
 
-    public void setForegroundColor(TextColor.RGB foregroundColor) {
-        this.foregroundColor = foregroundColor;
+    public void setForegroundColor(TextColor textColor) {
+        this.textColor = textColor;
     }
 
-    public void setForegroundColor(String hexColor) {
-
+    public void setForegroundColor(String color) {
+        this.setForegroundColor(TextColor.Factory.fromString(color));
     }
 
     public String getNormalString() {
@@ -27,14 +27,14 @@ public class ColoredString {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        if (foregroundColor != null) {
+        if (textColor != null) {
             sb.append("\033[");
-            sb.append(new String(foregroundColor.getForegroundSGRSequence(), StandardCharsets.UTF_8));
+            sb.append(new String(textColor.getForegroundSGRSequence(), StandardCharsets.UTF_8));
             sb.append("m");
         }
         sb.append(new String(strBytes, StandardCharsets.UTF_8));
 
-        if (foregroundColor != null) {
+        if (textColor != null) {
             sb.append("\033[m");
         }
 
