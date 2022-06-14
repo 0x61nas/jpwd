@@ -6,7 +6,6 @@ import com.anas.javautils.jpwd.lanterna.TextColor;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
