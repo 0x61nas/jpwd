@@ -5,8 +5,8 @@ import org.apache.commons.cli.Option;
 public enum CLIOption {
     HELP("h", "help", false, "Print this message"),
     VERSION("v", "version", false, "Print version information"),
-    LOGICAL("L", "logical", false, "Logical mode"),
-    PHYSICAL("P", "physical", false, "Physical mode"),
+    /*LOGICAL("L", "logical", false, "Logical mode"),
+    PHYSICAL("P", "physical", false, "Physical mode"),*/
     SEPARATOR("s", "separator", true, """
             Set the separator (like '-'), accept strings and characters,
             default is system separator (like '\\' in windows or '/' in linux and unix like systems)"""),
