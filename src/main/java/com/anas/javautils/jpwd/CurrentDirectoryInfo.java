@@ -5,6 +5,9 @@ import com.anas.javautils.jpwd.args.CLIOption;
 import com.anas.javautils.jpwd.lanterna.TextColor;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class CurrentDirectoryInfo {
@@ -13,7 +16,7 @@ public class CurrentDirectoryInfo {
     private String[] colors;
     private ArrayList<TextColor> blockedColors;
 
-    public CurrentDirectoryInfo() {
+    public CurrentDirectoryInfo() throws IOException {
         final var args = ArgumentProcessor.getInstance();
         separator = setupSeparator();
         if (args.hasOption(CLIOption.COLORS_LIST)) {
@@ -77,11 +80,11 @@ public class CurrentDirectoryInfo {
         return color;
     }
 
-    private void setupDirs() {
-        final var parentDirs = new File("").getAbsolutePath().split(File.separator);
-        dirs = new ColoredString[parentDirs.length];
+    private void setupDirs() throws IOException {
+        final var parentDirs = Path.of(".").toRealPath().toUri().getPath().split(File.separator);
+        dirs = new ColoredString[parentDirs.length == 0 ? 1 : parentDirs.length];
         int i = 0;
-        if (parentDirs[0].isBlank()) { // Means is the root directory
+        if (parentDirs.length == 0 || parentDirs[0].isBlank()) { // Means is the root directory
             dirs[0] = new ColoredString("/");
             i++;
         }
@@ -99,7 +102,8 @@ public class CurrentDirectoryInfo {
             if (!dir.getNormalString().equals("/") || hasCustomSeparator)
                 sb.append(separator.toString());
         }
-        sb.delete(sb.length() - separator.toString().length(), sb.length()); // Remove last separator
+        if (dirs.length > 1)
+            sb.delete(sb.length() - separator.toString().length(), sb.length()); // Remove last separator
         return sb.toString();
     }
 }
