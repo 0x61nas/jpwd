@@ -6,6 +6,7 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)
 [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=bugs)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Anas-Elgarhy_jpwd&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=Anas-Elgarhy_jpwd)
 
 ![jpwd screenshot](./screenshots/0.0.1.png "jpwd")
 
