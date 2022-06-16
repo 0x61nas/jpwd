@@ -4,6 +4,7 @@
     <root id="archive" name="jpwd.jar">
       <element id="module-output" name="jpwd" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-cli/commons-cli/1.5.0/commons-cli-1.5.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/github/Anas-Elgarhy/JColorfulConsole/1.0.3/JColorfulConsole-1.0.3.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
