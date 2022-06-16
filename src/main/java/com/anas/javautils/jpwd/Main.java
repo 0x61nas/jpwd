@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 public class Main {
-    public static final String VERSION = "0.0.1";
+    public static final String VERSION = "0.0.2";
     public static void main(final String[] args) {
         ArgumentProcessor.getInstance().process(args); // Process the arguments
         try {
