@@ -1,6 +1,7 @@
 package com.anas.javautils.jpwd;
 
-import com.anas.javautils.jpwd.lanterna.TextColor;
+
+import com.anas.jcolorfulconsole.lanterna.TextColor;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;

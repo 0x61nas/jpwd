@@ -2,7 +2,8 @@ package com.anas.javautils.jpwd;
 
 import com.anas.javautils.jpwd.args.ArgumentProcessor;
 import com.anas.javautils.jpwd.args.CLIOption;
-import com.anas.javautils.jpwd.lanterna.TextColor;
+import com.anas.jcolorfulconsole.ColoredString;
+import com.anas.jcolorfulconsole.lanterna.TextColor;
 
 import java.io.File;
 import java.io.IOException;
@@ -106,7 +107,7 @@ public class CurrentDirectoryInfo {
 
         for (final var dir : dirs) {
             sb.append(dir.toString());
-            if (!dir.getNormalString().equals("/") || hasCustomSeparator)
+            if (!dir.toNormalStringString().equals("/") || hasCustomSeparator)
                 sb.append(separator.toString());
         }
         if (dirs.length > 1)
