@@ -8,7 +8,7 @@ fi
 
 
 INSTALL_PATH=/usr/share/java/jpwd
-VERSION=0.0.2
+VERSION=0.0.3
 
 mkdir -p "$INSTALL_PATH"
 
