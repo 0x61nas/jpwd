@@ -21,6 +21,26 @@
 - Supports no icons and no colors modes
 - Cross-platform (macOS, Windows, Linux) 🌍
 
+## Install
+
+### Linux
+- From aur: `yay -S jpwd`
+- Manual:
+- Make sure you installed `wget` and [nerd font](https://www.nerdfonts.com)
+- Run this command
+   ```bash
+    curl -s https://raw.githubusercontent.com/Anas-Elgarhy/jpwd/master/scripts/install.sh | sudo bash
+   ```
+
+## Uninstall
+
+### Linux
+- Manual:
+- Run this command
+  ```bash
+    curl -s https://raw.githubusercontent.com/Anas-Elgarhy/jpwd/master/scripts/uninstall.sh | sudo bash
+  ```
+
 ### Options table
 | Option                       | Value                                                                 | Description                                                                                                                                          |
 |------------------------------|-----------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,7 +63,7 @@
 ## TODO
 - [ ] Add Tests
 - [ ] Add Formatter
-- [ ] Crete arch package
+- [x] Crete arch package, [created in aur](https://aur.archlinux.org/packages/jpwd)
 - [ ] Create debian package
 - [ ] Add `-L` and `-P` options like the original pwd
 
