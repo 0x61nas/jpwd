@@ -1,0 +1,3 @@
+[submodule "archpackage/jpwd"]
+	path = archpackage/jpwd
+	url = ssh://aur@aur.archlinux.org/jpwd.git
