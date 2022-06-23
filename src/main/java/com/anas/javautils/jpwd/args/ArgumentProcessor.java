@@ -1,5 +1,6 @@
 package com.anas.javautils.jpwd.args;
 
+import com.anas.javautils.jpwd.Main;
 import org.apache.commons.cli.*;
 
 public class ArgumentProcessor {
@@ -45,11 +46,12 @@ public class ArgumentProcessor {
     }
 
     private void printVersion() {
-        // TODO: 6/13/22 implement this
+        System.out.println("Version: " + Main.VERSION);
+        System.exit(0);
     }
 
     private void printHelp() {
-        new HelpFormatter().printHelp("jpwd", options);
+        new HelpFormatter().printHelp("jpwd [options]", options);
     }
 
 
