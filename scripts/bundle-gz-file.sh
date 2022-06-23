@@ -4,14 +4,11 @@ if [ -f ".temp" ]; then
 fi
 
 mkdir ./.temp/
-cp ../out/artifacts/jpwd_jar ./.temp/
+cp ../out/artifacts/jpwd_jar/jpwd.jar ./.temp/
 cp ./jpwd.sh ./.temp/
 
 
-cp ../out/artifacts/jpwd_jar .
-cp ./jpwd.sh .
-
-cd ./.temp || echo "Error: cd ./.temp" && exit 1
+cd ./.temp
 
 ls
 
