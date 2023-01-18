@@ -6,7 +6,7 @@
 
 	<groupId>com.anas.javautils.jpwd</groupId>
 	<artifactId>jpwd</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4</version>
 
 	<repositories>
 		<repository>
